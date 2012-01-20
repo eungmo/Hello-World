@@ -61,9 +61,10 @@ function display_site_info() {
 function display_login_form() {
 	//로그인  상자
 ?>
+	<!-- 클릭하면 회원등록 페이지로 이동-->						
 	<p></p><a href="register_form.php">Not a member?</a></p>
 	<!-- member.php에 출력-->
-	<form method="post" action="member.php">	
+	<form method="post" action="member.php">				<!----------------------------------------------->
 		<table bgcolor="#cccccc">
 			<tr>
 				<td colspan="2">Members log in here:</td>
@@ -90,8 +91,9 @@ function display_login_form() {
 }
 
 function display_registration_form() {
-//회원 등록
+//회원 등록 
 ?>
+	<!--Submit -> register_new.php로 이동-->
 	<form method="post" action="register_new.php">
 		<table bgcolor="#cccccc">
 			<tr>

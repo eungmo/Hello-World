@@ -7,9 +7,10 @@
 	$username=$_POST['username'];
 	$passwd=$_POST['passwd'];
 	$passwd2=$_POST['passwd2'];
-	//
+	
 	session_start();
 	
+	//에러처리
 	try {
 		//Check forms filled in
 		if(!filled_out($_POST)) {
@@ -32,7 +33,7 @@
 		}
 		
 		//attempt to register
-		//register($username, $email, $passwd);		//////////////////////////////////////////////
+		//register($username, $email, $passwd);		//진짜 등록
 		//register session variable
 		$_SESSION['valid_user'] = $username;
 		
