@@ -83,7 +83,7 @@ function display_login_form() {
 			</tr>
 			<tr>
 				<!-- 비밀번호를 잊어 버림, forgot_form.php로-->
-				<td colspan="2"><a href="forgot_form.php">Forgot your password?</a></td>
+				<td colspan="2"><a href="forgot_form.php">Forgot your password?</a></td>	<!----------------------------------------------->
 			</tr>
 		</table>
 	</form>
@@ -225,6 +225,26 @@ function display_password_form() {
 		</table>
 		<br />
 	</form>	
+<?php
+}
+
+function display_forgot_form() {
+	//display HTML form to reset and email password
+?>
+	<br />
+	<form action="forgot_passwd.php" method="post">
+		<table width="250" cellpadding="3" cellspacing="0" bgcolor="#cccccc">
+			<tr>
+				<td>Enter your username</td>
+				<td><input type="text" name="username" size="16" maxlength="16" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="Change password"/>
+				</td>
+			</tr>
+		</table>
+	</form>
 <?php
 }
 	

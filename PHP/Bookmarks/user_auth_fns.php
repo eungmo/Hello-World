@@ -138,7 +138,16 @@
 			throw new Exception("Could not find email address");
 		} else {
 			$row = $result->fetch_object();
-			$email = 
+			$email = $row->email;
+			$from = "From: suppoert@phpbookmark \r\n";
+			$mesg = "Your PHPBookmark password has been changed to ".$password."\r\n
+				Please change it next time you log in. \r\n";
+			
+			if(mail($email, 'PHPBookmark login information', $msg, $from)) {
+				return true;
+			} else {
+				throw new Exception("Could not send email");
+			}
 		}
 	}
 ?>
