@@ -8,12 +8,13 @@
 		
 		$result = mysql_query($query);
 		if(!$result) {
+			throw new Exception("Can't find user's 'bm_URL'");
 			return false;
 		}
 		
 		//create an array of the URLs
 		$url_array = array();
-		for($count=1;$row=$result->fetch_row();++$count) {
+		for($count=1;$row=mysql_fetch_row($result);++$count) {
 			$url_array[$count] = $row[0];
 		}
 		return $url_array;

@@ -1,5 +1,6 @@
 <?php
 	//프로젝트에 필요한 함수 파일을 불러온다.
+	session_start();
 	require_once('bookmark_fns.php');
 	
 	//짧은 스타일의 변수로 만든다.
@@ -8,7 +9,7 @@
 	$passwd=$_POST['passwd'];
 	$passwd2=$_POST['passwd2'];
 	
-	session_start();
+	
 	
 	//에러처리
 	try {
@@ -33,14 +34,14 @@
 		}
 		
 		//attempt to register
-		//register($username, $email, $passwd);		//진짜 등록
+		register($username, $email, $passwd);		//진짜 등록
 		//register session variable
 		$_SESSION['valid_user'] = $username;
 		
 		//provide link to members page
 		do_html_header('Registration successful');
-		echo "Your registration was successful. Go to the members page to start setting up your bookmarks";
-		do_html_url('member.php', 'Go to members page');	//멤머 페이지로 이동
+		echo "Your registration was successful. Go to the members page to start setting up your bookmarks.";
+		do_html_URL('member.php', 'Go to members page');	//멤머 페이지로 이동
 		
 		//end page
 		do_html_footer();		

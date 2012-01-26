@@ -40,11 +40,10 @@ function do_html_heading($heading) {
 <?php
 }
 
-function do_heml_URL($url, $name) {
+function do_html_URL($url, $name) {
 	//URL과 이름을 출력
-?>
-	<br/><a href="<?php echo $url;?>"><?php echo name;?></a><br />
-<?php
+	echo "<br/><a href=".$url.">".$name."</a><br />";
+
 }
 
 function display_site_info() {
@@ -165,7 +164,7 @@ function display_user_urls($url_array) {
 }
 
 function display_user_menu() {
-	//메뉴 옵션
+	//display menu
 ?>
 	<br />
 	<a href="member.php">Home</a> &nbsp;|&nbsp;
@@ -173,17 +172,18 @@ function display_user_menu() {
 <?php
 	//delete option
 	global $bm_table;
-	if($bm_table == true) {
-		echo "<a href=\"#\" onClick=\"bm_table.submit();\">Delete BM</a> &nbsp;|&nbsp;";
+	echo $bm_table;
+	if($bm_table == true) {		/////////////////////////////////////////////////////////////////////////////
+			echo "<a href=\"#\" onClick=\"bm_table.submit();\">Delete BM</a> &nbsp;|&nbsp;";
 	}
 	else {
 		echo "<span sytle=\"color: #cccccc\">Delete BM</span> &nbsp;|&nbsp;";
 	}
 ?>
-	<a href="change_password_form.php">Change Password</a>
+	<a href="change_passwd_form.php">Change Password</a>
 	<br />
 	<a href="recommend.php">Recommend URLs to me</a> &nbsp;|&nbsp;
-	<a herf="logout.php">Logout</a>
+	<a href="logout.php">Logout</a>
 	<hr />
 	
 <?php
@@ -212,15 +212,27 @@ function display_password_form() {
 	//패스워드 변경
 ?>
 	<br />
-	<form action="forgot_password.php" method="post">
+	<form action="change_passwd.php" method="post">
 		<table width="250" cellpadding="2" cellspacing="0" bgcolor="#cccccc">
 			<tr>
-				<td>Enter your username</td>
-				<td><input type="text" name="username" size="16" maxlength="16"/></td>
+				<td>Old password:</td>
+				<td><input type="password" name="Old_passwd"
+						size="16" maxlength="16"/></td>
+			</tr>
+			<tr>
+				<td>New password:</td>
+				<td><input type="password" name="new_passwd"
+						size="16" maxlength="16"/></td>
+			</tr>
+			<tr>
+				<td>Repeat new password:</td>
+				<td><input type="password" name="new_passwd2"
+						size="16" maxlength="16"/></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" value="Change Password"/></td>
+					<input type="submit" value="Change password"/>
+				</td>
 			</tr>
 		</table>
 		<br />
@@ -277,136 +289,3 @@ function display_recommended_urls ($url_array) {
 <?php
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
