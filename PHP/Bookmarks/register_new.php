@@ -41,7 +41,7 @@
 		//provide link to members page
 		do_html_header('Registration successful');
 		echo "Your registration was successful. Go to the members page to start setting up your bookmarks.";
-		do_html_URL('member.php', 'Go to members page');	//멤머 페이지로 이동
+		do_html_URL('okmember.php', 'Go to members page');	//멤머 페이지로 이동
 		
 		//end page
 		do_html_footer();		

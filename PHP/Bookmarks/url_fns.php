@@ -24,7 +24,7 @@
 	function add_bm($new_url) {
 		//add new bookmark to the database
 		
-		echo "Attempting to add ".htmlspecilchars($new_url)."<br />";
+		echo "Attempting to add ".htmlspecialchars($new_url)."<br />";
 		$valid_user = $_SESSION['valid_user'];
 		
 		$conn = db_connect();
