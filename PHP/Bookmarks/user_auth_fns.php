@@ -32,7 +32,7 @@
 	
 	function login($username, $password) {
 		//login 
-		//echo $username."   ".$password."<br>";////////////////////
+
 		//connect DB
 		$conn = db_connect();
 
@@ -48,7 +48,6 @@
 		$row = mysql_fetch_array($result);
 			
 		$RealPasswd = $row["passwd"];
-		//echo $RealPasswd."  |  ".$password."   |   ".sha1($password)."<br>";//////////////////
 		
 		$password2 = sha1($password);
 		if($RealPasswd == $password2) {				
@@ -70,14 +69,14 @@
 			exit ;
 		}
 	}
-	
+
 	function change_password($username, $old_password, $new_password) {
 		//Change password
-	
+			
 		login($username, $old_password);
-	
+
 		$conn = db_connect();
-		$query = "UPDATE user SET passwd = sha1('" . $new_password . "') WHERE username = '" . $username . "'";
+		$query = "UPDATE user SET passwd = sha1('".$new_password."') WHERE username = '".$username."'";
 	
 		$result = mysql_query($query);
 	

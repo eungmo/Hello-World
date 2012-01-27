@@ -51,12 +51,13 @@
 	
 	function delete_bm($user, $url) {
 		//delete one URL from database
+		
 		$conn = db_connect();
 		
-		$query = "DELETE FROM bookmark WHERE
-			username='".$user."' and bm_url=".$url."'";
+		$query = "DELETE FROM bookmark WHERE username='".$user."' and bm_URL='".$url."'";
 		
 		$result = mysql_query($query);
+
 		if(!$result) {
 			throw new Exception("Bookmark could not be deleted");
 		}
@@ -67,27 +68,31 @@
 		
 		$conn = db_connect();
 		
-		$query = "SELECT bm_URL FROM bookmark WHERE username IN
-			(SELECT distinct(b2.username)
-			FROM bookmark b1, bookmark b2
-			AND b1.username='".$valid_user."'
-			AND b1.username != b2.username
-			AND b1.bm_URL = b2.bm_URL)
-			AND bm_URL NOT IN
-			(SELECT bm_URL FROM bookmark
-			WHERE username='".$valid_user."')
-			GROUP BY bm_url
-			HAVING count(bm_url)>".$popularity;
+		$query = "SELECT bm_URL FROM bookmark WHERE bm_URL NOT IN ( SELECT bm_URL FROM bookmark WHERE username='".$result_user."')";
+		// "SELECT bm_URL
+				// FROM bookmark
+				// WHERE username IN
+					// (SELECT distinct(b2.username)
+						// FROM bookmark b1, bookmark b2
+						// WHERE b1.username ='".$valid_user."'
+						// AND b1.username != b2.username
+						// AND b1.bm_URL = b2.bm_URL)
+				// AND bm_URL NOT IN
+					// (SELECT bm_URL FROM bookmark
+						// WHERE username='".$valid_user."')
+					// GROUP BY bm_URL
+					// HAVING count(bm_URL)>".$popularity;
 			
 		$result = mysql_query($query);
+		
 		if(!$result) {
 			throw new Exception("Could not find any bookmark to recommend");
 		}
 		
 		$urls = array();
 		//build an array of the relevant urls
-		for($count=0;$row=$result->fetch_object();$count++) {
-			$urls[$count] = $row->bm_URL;
+		for($count=0;$row=mysql_fetch_array($result);$count++) {
+			$urls[$count] = $row['bm_URL'];
 		}
 		return $urls;
 	}

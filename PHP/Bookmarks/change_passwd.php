@@ -22,7 +22,8 @@
 		}
 		
 		//attempt update
-		change_password($_SESSION['valid_user'], $old_password, $new_password);
+									
+		change_password($_SESSION['valid_user'], $old_passwd, $new_passwd);
 		echo "Password changed";
 	} catch(exception $e) {
 		echo $e->getMessage();

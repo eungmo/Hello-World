@@ -216,7 +216,7 @@ function display_password_form() {
 		<table width="250" cellpadding="2" cellspacing="0" bgcolor="#cccccc">
 			<tr>
 				<td>Old password:</td>
-				<td><input type="password" name="Old_passwd"
+				<td><input type="password" name="old_passwd"
 						size="16" maxlength="16"/></td>
 			</tr>
 			<tr>
@@ -264,13 +264,17 @@ function display_recommended_urls ($url_array) {
 //dis_play_urls???????????????
 ?>
 	<br />
-	<table width="100" cellpadding="2" cellspacing="0">
+	<table width="300" cellpadding="2" cellspacing="0">
 <?php
 	$color = "#cccccc";
 	echo "<tr bgcolor=\"".$color."\">
 		<td><strong>Recommendations</strong></td></tr>";
+		
+	//echo "<br>".(is_array($url_array))." | ".(count($url_array))."<br>";
+	
 	if((is_array($url_array)) && (count($url_array) > 0)) {
 		foreach($url_array as $url) {
+			
 			if($color == "#cccccc") {
 				$color = "#ffffff";	
 			} 
@@ -282,7 +286,7 @@ function display_recommended_urls ($url_array) {
 		}
 	}
 	else {
-		"<tr><td>No recommendations for you today.</td></tr>";
+		echo "<tr bgcolor=\"".$color."\"><td><strong>No recommendations for you today.</strong></td></tr>";
 	}
 ?>
 	</table>

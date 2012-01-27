@@ -20,6 +20,7 @@
 			//Unsucessful login
 			do_html_header('Problem');
 			echo "You could not be logged in. try again.";
+			do_html_URL('login.php', 'Log in');
 			do_html_footer();
 			exit;
 		}
