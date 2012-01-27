@@ -172,7 +172,7 @@ function display_user_menu() {
 <?php
 	//delete option
 	global $bm_table;
-	echo $bm_table;
+	//echo $bm_table;
 	if($bm_table == true) {		/////////////////////////////////////////////////////////////////////////////
 			echo "<a href=\"#\" onClick=\"bm_table.submit();\">Delete BM</a> &nbsp;|&nbsp;";
 	}
