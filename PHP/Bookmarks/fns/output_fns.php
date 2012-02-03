@@ -14,7 +14,7 @@ function do_html_header($title)
 		</style>		
 	</head>
 	<body>
-		<img src="bookmark.gif" alt="PHPbookmark logo" border="0"
+		<img src="../images/bookmark.gif" alt="PHPbookmark logo" border="0"
 			align="left" valign="bottom" height="55" width="57" />
 		<h1>PHPbookmark</h1>
 		<hr/>
@@ -61,9 +61,9 @@ function display_login_form() {
 	//로그인  상자
 ?>
 	<!-- 클릭하면 회원등록 페이지로 이동-->						
-	<p></p><a href="register_form.php">Not a member?</a></p>
+	<p></p><a href="../member/register_form.php">Not a member?</a></p>
 	<!-- member.php에 출력-->
-	<form method="post" action="member.php">				<!----------------------------------------------->
+	<form method="post" action="../member/member.php">				<!----------------------------------------------->
 		<table bgcolor="#cccccc">
 			<tr>
 				<td colspan="2">Members log in here:</td>
@@ -82,7 +82,7 @@ function display_login_form() {
 			</tr>
 			<tr>
 				<!-- 비밀번호를 잊어 버림, forgot_form.php로-->
-				<td colspan="2"><a href="forgot_form.php">Forgot your password?</a></td>	<!----------------------------------------------->
+				<td colspan="2"><a href="../member/forgot_form.php">Forgot your password?</a></td>	<!----------------------------------------------->
 			</tr>
 		</table>
 	</form>
@@ -93,7 +93,7 @@ function display_registration_form() {
 //회원 등록 
 ?>
 	<!--Submit -> register_new.php로 이동-->
-	<form method="post" action="register_new.php">
+	<form method="post" action="../member/register_new.php">
 		<table bgcolor="#cccccc">
 			<tr>
 				<td>Email address:</td>
@@ -125,13 +125,13 @@ function display_registration_form() {
 
 function display_user_urls($url_array) {
 	//테이블의 URL들
-	//global변수로 테스트가능하게 함
 	
+	//global변수로 테스트가능하게 함
 	global $bm_table;
 	$bm_table = true;
 ?>
 	<br/>
-	<form name="bm_table" action="delete_bms.php" method="post">
+	<form name="bm_table" action="../bookmark/delete_bms.php" method="post">
 		<table width="300" cellpadding="2" cellspacing="0">
 			<?php
 				$color = "#cccccc";
@@ -167,8 +167,8 @@ function display_user_menu() {
 	//display menu
 ?>
 	<br />
-	<a href="okmember.php">Home</a> &nbsp;|&nbsp;
-	<a href="add_bm_form.php">Add BM</a> &nbsp;|&nbsp;
+	<a href="../member/okmember.php">Home</a> &nbsp;|&nbsp;
+	<a href="../bookmark/add_bm_form.php">Add BM</a> &nbsp;|&nbsp;
 <?php
 	//delete option
 	global $bm_table;
@@ -180,10 +180,10 @@ function display_user_menu() {
 		echo "<span sytle=\"color: #cccccc\">Delete BM</span> &nbsp;|&nbsp;";
 	}
 ?>
-	<a href="change_passwd_form.php">Change Password</a>
+	<a href="../member/change_passwd_form.php">Change Password</a>
 	<br />
-	<a href="recommend.php">Recommend URLs to me</a> &nbsp;|&nbsp;
-	<a href="logout.php">Logout</a>
+	<a href="../bookmark/recommend.php">Recommend URLs to me</a> &nbsp;|&nbsp;
+	<a href="../member/logout.php">Logout</a>
 	<hr />
 	
 <?php
@@ -192,7 +192,7 @@ function display_user_menu() {
 function display_add_bm_form() {
 	//새로운 북마크 폼
 ?>
-	<form name="tm_table" action="add_bms.php" method="post">
+	<form name="tm_table" action="../bookmark/add_bms.php" method="post">
 		<table width="250" cellpadding"2" cellspacing="0" bgcolor="#cccccc">
 			<tr>
 				<td>New BM:</td>
@@ -212,7 +212,7 @@ function display_password_form() {
 	//패스워드 변경
 ?>
 	<br />
-	<form action="change_passwd.php" method="post">
+	<form action="../member/change_passwd.php" method="post">
 		<table width="250" cellpadding="2" cellspacing="0" bgcolor="#cccccc">
 			<tr>
 				<td>Old password:</td>
@@ -244,7 +244,7 @@ function display_forgot_form() {
 	//display HTML form to reset and email password
 ?>
 	<br />
-	<form action="forgot_passwd.php" method="post">
+	<form action="../member/forgot_passwd.php" method="post">
 		<table width="250" cellpadding="3" cellspacing="0" bgcolor="#cccccc">
 			<tr>
 				<td>Enter your username</td>

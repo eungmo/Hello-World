@@ -1,7 +1,7 @@
 <?php
 	//include function
 	session_start();
-	require_once('fns/bookmark_fns.php');
+	require_once('../fns/bookmark_fns.php');
 	
 	do_html_header('Home');
 	check_valid_user();

@@ -69,20 +69,7 @@
 		$conn = db_connect();
 		
 		$query = "SELECT bm_URL FROM bookmark WHERE bm_URL NOT IN ( SELECT bm_URL FROM bookmark WHERE username='".$result_user."')";
-		// "SELECT bm_URL
-				// FROM bookmark
-				// WHERE username IN
-					// (SELECT distinct(b2.username)
-						// FROM bookmark b1, bookmark b2
-						// WHERE b1.username ='".$valid_user."'
-						// AND b1.username != b2.username
-						// AND b1.bm_URL = b2.bm_URL)
-				// AND bm_URL NOT IN
-					// (SELECT bm_URL FROM bookmark
-						// WHERE username='".$valid_user."')
-					// GROUP BY bm_URL
-					// HAVING count(bm_URL)>".$popularity;
-			
+
 		$result = mysql_query($query);
 		
 		if(!$result) {

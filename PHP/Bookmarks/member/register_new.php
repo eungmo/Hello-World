@@ -1,7 +1,7 @@
 <?php
 	//프로젝트에 필요한 함수 파일을 불러온다.
 	session_start();
-	require_once('fns/bookmark_fns.php');
+	require_once('../fns/bookmark_fns.php');
 	
 	//짧은 스타일의 변수로 만든다.
 	$email=$_POST['email'];

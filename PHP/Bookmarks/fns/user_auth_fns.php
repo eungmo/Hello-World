@@ -65,7 +65,7 @@
 			//not Log in
 			do_html_header('Log in Problem');
 			echo "You are not logged in<br />";
-			do_html_url('login.php', 'Login');
+			do_html_url('../member/login.php', 'Login');
 			exit ;
 		}
 	}

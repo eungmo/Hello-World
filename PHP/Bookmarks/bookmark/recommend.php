@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once("fns/bookmark_fns.php");
+	require_once("../fns/bookmark_fns.php");
 	
 	do_html_header("Recommending URLs");
 	

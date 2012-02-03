@@ -1,7 +1,7 @@
 <?php
 	//include function files for this application
 	session_start();
-	require_once("fns/bookmark_fns.php");
+	require_once("../fns/bookmark_fns.php");
 	
 	$old_user = $_SESSION['valid_user'];
 	

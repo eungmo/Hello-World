@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once("fns/bookmark_fns.php");
+	require_once("../fns/bookmark_fns.php");
 	
 	//create short variable name
 	$new_url = $_POST['new_url'];
