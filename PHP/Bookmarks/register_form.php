@@ -1,5 +1,5 @@
 <?php
-	require_once('bookmark_fns.php');
+	require_once('fns/bookmark_fns.php');
 	do_html_header('User Registration');
 	
 	display_registration_form();	//회원 등록 함수로 이동

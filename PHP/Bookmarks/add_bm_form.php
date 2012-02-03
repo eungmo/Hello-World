@@ -1,7 +1,7 @@
 <?php
 	//include function files for this application
 	session_start();
-	require_once("bookmark_fns.php");
+	require_once("fns/bookmark_fns.php");
 	
 	//start output html
 	do_html_header("Add Bookmarks");

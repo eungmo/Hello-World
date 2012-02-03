@@ -1,5 +1,5 @@
 <?php
-	require_once("bookmark_fns.php");
+	require_once("fns/bookmark_fns.php");
 	
 	do_html_header("Reset password");
 	

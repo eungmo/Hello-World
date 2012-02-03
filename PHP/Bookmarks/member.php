@@ -1,7 +1,7 @@
 <?php
 	//include function
 	session_start();
-	require_once('bookmark_fns.php');
+	require_once('fns/bookmark_fns.php');
 	
 	//create short variable name
 	$username = $_POST['username'];
